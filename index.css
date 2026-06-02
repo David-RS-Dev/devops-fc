@@ -1,0 +1,93 @@
+/* index.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a;
+    color: #f8fafc;
+    margin: 0;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #38bdf8;
+    margin-bottom: 5px;
+}
+
+header h2 {
+    color: #a78bfa;
+    margin-top: 0;
+    font-weight: 400;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h3 {
+    color: #f1f5f9;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 10px;
+    margin-top: 40px;
+}
+
+.team-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.team-section li {
+    background-color: #1e293b;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+    font-size: 0.95rem;
+}
+
+.grupos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.grupo-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.grupo-card:not(.deshabilitado):hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+}
+
+.grupo-card h4 {
+    margin: 0 0 10px 0;
+    color: #38bdf8;
+    font-size: 1.25rem;
+}
+
+.grupo-card p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+.grupo-card.deshabilitado {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.grupo-card.deshabilitado h4 {
+    color: #64748b;
+}
