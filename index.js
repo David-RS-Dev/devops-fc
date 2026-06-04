@@ -1,21 +1,73 @@
-// index.js
-document.addEventListener('DOMContentLoaded', () => {
-    // Lista oficial de integrantes de DevOps FC
-    const integrantes = [
-        { nombre: "David Rivera", usuario: "David-RS-Dev", rol: "Líder / Grupo A" },
-        { nombre: "Stalyn Peña", usuario: "Stalyin", rol: "Grupo B" },
-        { nombre: "Scarlet Córdova", usuario: "ScarlettCordova", rol: "Grupo C" },
-        { nombre: "Xavo Palacios", usuario: "xavopalacios", rol: "Grupo D" },
-        { nombre: "Víctor Pilachanga", usuario: "Victor-DREC", rol: "Grupo E" }
-    ];
+function obtenerElemento(id) {
+  return document.getElementById(id);
+}
 
-    const listaContenedor = document.getElementById('lista-miembros');
+function mostrarSeccion(idSeccion) {
+  let secciones = document.querySelectorAll(".view");
 
-    if (listaContenedor) {
-        integrantes.forEach(miembro => {
-            const li = document.createElement('li');
-            li.innerHTML = `<strong>${miembro.nombre}</strong> (${miembro.usuario}) - <span class="rol-tag">${miembro.rol}</span>`;
-            listaContenedor.appendChild(li);
-        });
+  for (let i = 0; i < secciones.length; i++) {
+    secciones[i].classList.remove("view--active");
+  }
+
+  let seccion = obtenerElemento(idSeccion);
+
+  if (seccion !== null) {
+    seccion.classList.add("view--active");
+  }
+
+  actualizarNavbar(idSeccion);
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
+  cerrarMenu();
+}
+
+function actualizarNavbar(idSeccion) {
+  let enlaces = document.querySelectorAll(".nav-link");
+
+  for (let i = 0; i < enlaces.length; i++) {
+    enlaces[i].classList.remove("active");
+
+    if (enlaces[i].dataset.section === idSeccion) {
+      enlaces[i].classList.add("active");
     }
-});
+  }
+}
+
+function alternarMenu() {
+  let menu = obtenerElemento("mainNav");
+
+  if (menu !== null) {
+    menu.classList.toggle("open");
+  }
+}
+
+function cerrarMenu() {
+  let menu = obtenerElemento("mainNav");
+
+  if (menu !== null) {
+    menu.classList.remove("open");
+  }
+}
+
+function abrirRepositorio() {
+  window.open("https://github.com/", "_blank");
+}
+
+function scrollAEstudiantes() {
+  mostrarSeccion("home");
+
+  setTimeout(function () {
+    let seccion = obtenerElemento("cardsEstudiantes");
+
+    if (seccion !== null) {
+      seccion.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, 120);
+}
