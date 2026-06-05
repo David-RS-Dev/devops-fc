@@ -52,7 +52,7 @@ const equiposGrupoA = [
     nombre: "Chequia",
     badge: "UEFA",
     imagen:
-      "https://images.unsplash.com/photo-1549131068-1d6b2c3c3b3c?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1600623471616-8c1966c91ff6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     descripcion:
       "Chequia llega con la solidez táctica que caracteriza al fútbol centroeuropeo.",
     curiosidades: [
