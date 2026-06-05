@@ -1,30 +1,76 @@
-<!-- grupoA.html -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grupo A - Álbum Virtual</title>
-    <link rel="stylesheet" href="grupoA.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Grupo A | DevOps FC</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="stylesheet" href="grupoA.css">
 </head>
 <body>
 
-    <header>
-        <h1>Grupo Mundialista: Grupo A</h1>
-    </header>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="../../index.html">
+        <i class='bx bx-football brand__icon'></i>
+        <span>DevOps FC</span>
+      </a>
 
-    <main>
-        <section class="equipos-container">
-            <div class="card">
-                <img src="../img/banderaEcuador.png" alt="Bandera de Ecuador" class="bandera">
-                <h2>Ecuador</h2>
-                <p>Selección Mundialista</p>
-                <button id="btn-ecuador">Ver Detalles</button>
-            </div>
-            
-            </section>
-    </main>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-link" onclick="scrollEquiposA()">Equipos</button>
+        <button class="nav-link" onclick="scrollResumenA()">Resumen</button>
+      </nav>
 
-    <script src="../grupoA.js"></script>
+      <div class="topbar__actions">
+        <a class="github-btn" href="../../index.html">
+          <i class='bx bx-left-arrow-alt'></i>
+          <span>Inicio</span>
+        </a>
+
+        <button class="menu-btn" onclick="alternarMenuA()">
+          <i class='bx bx-menu'></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="equipos-section" id="equiposGrupoA">
+      <div class="section-heading">
+        <span class="eyebrow">Equipos</span>
+        <h2>Grupo A</h2>
+        <p>Selecciona una card para abrir el sidebar con datos y curiosidades.</p>
+      </div>
+
+      <div class="team-grid" id="teamGridA"></div>
+    </section>
+  </main>
+
+  <aside class="team-drawer" id="teamDrawerA">
+    <button class="drawer-close" onclick="cerrarSidebarEquipoA()">
+      <i class='bx bx-x'></i>
+    </button>
+
+    <img id="drawerImgA" src="" alt="Equipo">
+    <span class="eyebrow" id="drawerBadgeA">Equipo</span>
+    <h2 id="drawerTitleA">Nombre del equipo</h2>
+    <p id="drawerDescriptionA"></p>
+
+    <h3>Curiosidades</h3>
+    <ul id="drawerCuriositiesA"></ul>
+
+    <h3>Jugadores destacados</h3>
+    <div id="drawerPlayersA" class="drawer-tags"></div>
+  </aside>
+
+  <div class="drawer-backdrop" id="drawerBackdropA" onclick="cerrarSidebarEquipoA()"></div>
+
+  <script src="grupoA.js"></script>
 </body>
 </html>
