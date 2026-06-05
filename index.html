@@ -1,57 +1,457 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevOps FC - Álbum Virtual Mundialista</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DevOps FC | Álbum Virtual Mundialista</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-    <header>
-        <h1>Álbum Virtual Mundialista</h1>
-        <h2>Equipo: DevOps FC</h2>
-    </header>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <button class="brand" onclick="mostrarSeccion('home')">
+        <i class='bx bx-football brand__icon'></i>
+        <span>DevOps FC</span>
+      </button>
 
-    <main>
-        <section class="team-section">
-            <h3>Miembros del Grupo GitHub</h3>
-            <ul id="lista-miembros">
-                </ul>
-        </section>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-link active" data-section="home" onclick="mostrarSeccion('home')">Inicio</button>
+        <button class="nav-link" data-section="grupos" onclick="mostrarSeccion('grupos')">Grupos 2026</button>
+        <button class="nav-link" data-section="developers" onclick="mostrarSeccion('developers')">Developers</button>
+      </nav>
 
-        <section class="navigation-section">
-            <h3>Grupos Mundialistas</h3>
-            <div class="grupos-grid">
-                <a href="Grupo_A/paginas/grupoA.html" class="grupo-card">
-                    <h4>Grupo A</h4>
-                    <p>Desarrollado por: David Rivera</p>
-                </a>
-                
-                <a href="Grupo_B/paginas/grupoB.html" class="grupo-card">
-                    <h4>Grupo B</h4>
-                    <p>Desarrollado por: Stalyn Peña</p>
-                </a>
+      <div class="topbar__actions">
+        <button class="github-btn" onclick="abrirRepositorio()">
+          <i class='bx bxl-github'></i>
+          <span>GitHub</span>
+        </button>
 
-                <a href="Grupo_C/paginas/grupoC.html" class="grupo-card">
-                    <h4>Grupo C</h4>
-                    <p>Desarrollado por: Scarlet Córdova</p>
-                </a>
+        <button class="menu-btn" onclick="alternarMenu()">
+          <i class='bx bx-menu'></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
-                <a href="Grupo_D/paginas/grupoD.html" class="grupo-card">
-                    <h4>Grupo D</h4>
-                    <p>Desarrollado por: Xavo Palacios</p>
-                </a>
+  <main>
 
-                <a href="Grupo_E/paginas/grupoE.html" class="grupo-card">
-                    <h4>Grupo E</h4>
-                    <p>Desarrollado por: Víctor Pilachanga</p>
-                </a>
+    <!-- ======================================================
+      HOME
+      Solo esta sección se oculta/muestra con JS.
+      Las cards ya están escritas directamente en HTML.
+    ======================================================= -->
+    <section id="home" class="view view--active">
+      <section class="hero">
+        <div class="hero__content">
+          <h1>Colecciona grupos, Album Mundialista.</h1>
+        </div>
+
+        <div class="album-stage">
+          <article class="sticker-card sticker-card--left">
+            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80" alt="Jugador de fútbol">
+            <span>Jugador estrella</span>
+          </article>
+
+          <article class="sticker-card sticker-card--main">
+            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80" alt="Copa mundialista">
+            <div>
+              <strong>World Cup</strong>
+              <span>Álbum 2026</span>
             </div>
-        </section>
-    </main>
+          </article>
 
-    <script src="index.js"></script>
+          <article class="sticker-card sticker-card--right">
+            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=700&q=80" alt="Jugador con balón">
+            <span>Promesa</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="students-section" id="cardsEstudiantes">
+        <div class="section-heading">
+          <span class="eyebrow">Grupos Mundialistas</span>
+          <h2>Conoce tu grupo favorito</h2>
+          <p>
+            Selecciona tu grupo preferido y conoce sus curiosidades.
+          </p>
+        </div>
+
+        <div class="students-grid">
+         
+          <a class="student-card" href="Grupo_A/paginas/grupoA.html">
+            <div>
+              <div class="student-avatar">DR</div>
+              <h3>David Rivera</h3>
+              <p>David-RS-Dev</p>
+              <p>Líder del equipo</p>
+            </div>
+            <span>Grupo A</span>
+          </a>
+
+          <a class="student-card" href="Grupo_B/paginas/grupoB.html">
+            <div>
+              <div class="student-avatar">SP</div>
+              <h3>Stalyn Peña</h3>
+              <p>Stalyin</p>
+              <p>Desarrollador</p>
+            </div>
+            <span>Grupo B</span>
+          </a>
+
+          <a class="student-card" href="Grupo_C/paginas/grupoC.html">
+            <div>
+              <div class="student-avatar">SC</div>
+              <h3>Scarlet Córdova</h3>
+              <p>ScarlettCordova</p>
+              <p>Desarrolladora</p>
+            </div>
+            <span>Grupo C</span>
+          </a>
+
+          <a class="student-card" href="Grupo_D/paginas/grupoD.html">
+            <div>
+              <div class="student-avatar">XP</div>
+              <h3>Xavo Palacios</h3>
+              <p>xavopalacios</p>
+              <p>Desarrollador</p>
+            </div>
+            <span>Grupo D</span>
+          </a>
+
+          <a class="student-card" href="Grupo_E/paginas/grupoE.html">
+            <div>
+              <div class="student-avatar">VP</div>
+              <h3>Víctor Pilachanga</h3>
+              <p>Victor-DREC</p>
+              <p>Desarrollador</p>
+            </div>
+            <span>Grupo E</span>
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <!-- ======================================================
+      GRUPOS 2026
+    ======================================================= -->
+    <section id="grupos" class="view">
+      <section class="groups-section">
+        <div class="section-heading">
+          <span class="eyebrow">Mundial 2026</span>
+          <h2>Grupos oficiales</h2>
+          <p>
+            Revisa los equipos de cada grupo. Las cards asignadas abren la página individual.
+          </p>
+        </div>
+
+        <div class="groups-grid">
+          <a class="group-card" href="Grupo_A/paginas/grupoA.html">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo A</h3>
+                <small>David Rivera</small>
+              </div>
+              <span class="group-letter">A</span>
+            </div>
+            <ul class="teams-list">
+              <li>México</li>
+              <li>Sudáfrica</li>
+              <li>Corea del Sur</li>
+              <li>Chequia</li>
+            </ul>
+          </a>
+
+          <a class="group-card" href="Grupo_B/paginas/grupoB.html">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo B</h3>
+                <small>Stalyn Peña</small>
+              </div>
+              <span class="group-letter">B</span>
+            </div>
+            <ul class="teams-list">
+              <li>Canadá</li>
+              <li>Bosnia y Herzegovina</li>
+              <li>Qatar</li>
+              <li>Suiza</li>
+            </ul>
+          </a>
+
+          <a class="group-card" href="Grupo_C/paginas/grupoC.html">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo C</h3>
+                <small>Scarlet Córdova</small>
+              </div>
+              <span class="group-letter">C</span>
+            </div>
+            <ul class="teams-list">
+              <li>Brasil</li>
+              <li>Marruecos</li>
+              <li>Haití</li>
+              <li>Escocia</li>
+            </ul>
+          </a>
+
+          <a class="group-card" href="Grupo_D/paginas/grupoD.html">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo D</h3>
+                <small>Xavo Palacios</small>
+              </div>
+              <span class="group-letter">D</span>
+            </div>
+            <ul class="teams-list">
+              <li>Estados Unidos</li>
+              <li>Paraguay</li>
+              <li>Australia</li>
+              <li>Turquía</li>
+            </ul>
+          </a>
+
+          <a class="group-card" href="Grupo_E/paginas/grupoE.html">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo E</h3>
+                <small>Víctor Pilachanga</small>
+              </div>
+              <span class="group-letter">E</span>
+            </div>
+            <ul class="teams-list">
+              <li>Alemania</li>
+              <li>Curazao</li>
+              <li>Costa de Marfil</li>
+              <li>Ecuador</li>
+            </ul>
+          </a>
+
+          <article class="group-card disabled">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo F</h3>
+                <small>Por asignar</small>
+              </div>
+              <span class="group-letter">F</span>
+            </div>
+            <ul class="teams-list">
+              <li>Países Bajos</li>
+              <li>Japón</li>
+              <li>Suecia</li>
+              <li>Túnez</li>
+            </ul>
+          </article>
+
+          <article class="group-card disabled">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo G</h3>
+                <small>Por asignar</small>
+              </div>
+              <span class="group-letter">G</span>
+            </div>
+            <ul class="teams-list">
+              <li>Bélgica</li>
+              <li>Egipto</li>
+              <li>Irán</li>
+              <li>Nueva Zelanda</li>
+            </ul>
+          </article>
+
+          <article class="group-card disabled">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo H</h3>
+                <small>Por asignar</small>
+              </div>
+              <span class="group-letter">H</span>
+            </div>
+            <ul class="teams-list">
+              <li>España</li>
+              <li>Cabo Verde</li>
+              <li>Arabia Saudita</li>
+              <li>Uruguay</li>
+            </ul>
+          </article>
+
+          <article class="group-card disabled">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo I</h3>
+                <small>Por asignar</small>
+              </div>
+              <span class="group-letter">I</span>
+            </div>
+            <ul class="teams-list">
+              <li>Francia</li>
+              <li>Senegal</li>
+              <li>Irak</li>
+              <li>Noruega</li>
+            </ul>
+          </article>
+
+          <article class="group-card disabled">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo J</h3>
+                <small>Por asignar</small>
+              </div>
+              <span class="group-letter">J</span>
+            </div>
+            <ul class="teams-list">
+              <li>Argentina</li>
+              <li>Argelia</li>
+              <li>Austria</li>
+              <li>Jordania</li>
+            </ul>
+          </article>
+
+          <article class="group-card disabled">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo K</h3>
+                <small>Por asignar</small>
+              </div>
+              <span class="group-letter">K</span>
+            </div>
+            <ul class="teams-list">
+              <li>Portugal</li>
+              <li>RD Congo</li>
+              <li>Uzbekistán</li>
+              <li>Colombia</li>
+            </ul>
+          </article>
+
+          <article class="group-card disabled">
+            <div class="group-card__top">
+              <div>
+                <h3>Grupo L</h3>
+                <small>Por asignar</small>
+              </div>
+              <span class="group-letter">L</span>
+            </div>
+            <ul class="teams-list">
+              <li>Inglaterra</li>
+              <li>Croacia</li>
+              <li>Ghana</li>
+              <li>Panamá</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <!-- ======================================================
+      DEVELOPERS
+    ======================================================= -->
+    <section id="developers" class="view">
+      <section class="developers-section">
+        <div class="section-heading">
+          <span class="eyebrow">GitHub workflow</span>
+          <h2>Organización del trabajo</h2>
+          <p>
+            El proyecto puede trabajar con ramas para mantener ordenado el desarrollo grupal.
+          </p>
+        </div>
+
+        <div class="workflow-grid">
+          <article>
+            <i class='bx bx-git-branch'></i>
+            <h3>Trabajo en ramas</h3>
+            <p>Cada integrante trabaja su grupo en una rama propia para evitar choques.</p>
+          </article>
+
+          <article>
+            <i class='bx bx-home-alt-2'></i>
+            <h3>Rama main</h3>
+            <p>Contiene la versión estable del proyecto, lista para presentar o desplegar.</p>
+          </article>
+
+          <article>
+            <i class='bx bx-code-curly'></i>
+            <h3>Rama dev</h3>
+            <p>Recibe avances antes de unirlos a main y ayuda a probar cambios.</p>
+          </article>
+        </div>
+
+        <div class="section-heading small-heading">
+          <span class="eyebrow">Equipo</span>
+          <h2>Integrantes</h2>
+        </div>
+
+        <div class="members-grid">
+          <article class="member-card">
+            <div>
+              <div class="member-avatar">DR</div>
+              <h3>David Rivera</h3>
+              <p>David-RS-Dev</p>
+              <p>Líder del equipo</p>
+            </div>
+            <span>Grupo A</span>
+          </article>
+
+          <article class="member-card">
+            <div>
+              <div class="member-avatar">SP</div>
+              <h3>Stalyn Peña</h3>
+              <p>Stalyin</p>
+              <p>Desarrollador</p>
+            </div>
+            <span>Grupo B</span>
+          </article>
+
+          <article class="member-card">
+            <div>
+              <div class="member-avatar">SC</div>
+              <h3>Scarlet Córdova</h3>
+              <p>ScarlettCordova</p>
+              <p>Desarrolladora</p>
+            </div>
+            <span>Grupo C</span>
+          </article>
+
+          <article class="member-card">
+            <div>
+              <div class="member-avatar">XP</div>
+              <h3>Xavo Palacios</h3>
+              <p>xavopalacios</p>
+              <p>Desarrollador</p>
+            </div>
+            <span>Grupo D</span>
+          </article>
+
+          <article class="member-card">
+            <div>
+              <div class="member-avatar">VP</div>
+              <h3>Víctor Pilachanga</h3>
+              <p>Victor-DREC</p>
+              <p>Desarrollador</p>
+            </div>
+            <span>Grupo E</span>
+          </article>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>DevOps FC</strong>
+      <p>Álbum Virtual Mundialista 2026</p>
+    </div>
+
+    <button onclick="mostrarSeccion('home')">
+      Volver al inicio <i class='bx bx-up-arrow-alt'></i>
+    </button>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>
