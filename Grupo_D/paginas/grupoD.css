@@ -1,0 +1,238 @@
+/* ======================================================
+  SCROLLBAR CUSTOM
+====================================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  backdrop-filter: blur(10px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ======================================================
+  GRUPO D - PÁGINA INDIVIDUAL
+====================================================== */
+
+.equipos-section {
+  width: min(1500px, 94%);
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.team-card {
+  min-height: 440px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background: var(--dark);
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 20px 52px rgba(15, 23, 42, 0.15);
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+}
+
+.team-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.team-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to top,
+    rgba(8, 17, 31, 0.92),
+    rgba(8, 17, 31, 0.16)
+  );
+}
+
+.team-card__body {
+  position: relative;
+  z-index: 2;
+  text-align: left;
+}
+
+.team-card__body span {
+  width: max-content;
+  padding: 6px 10px;
+  display: inline-flex;
+  color: var(--dark);
+  background: var(--green);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.team-card h3 {
+  margin-top: 14px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 54px;
+  line-height: 0.9;
+}
+
+.team-card p {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.5;
+}
+
+/* ======================================================
+  DRAWER LATERAL
+====================================================== */
+
+.team-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: auto;
+  z-index: 250;
+  width: min(430px, 92vw);
+  height: 100vh;
+  padding: 22px;
+  overflow-y: auto;
+  background: white;
+  box-shadow: -22px 0 70px rgba(15, 23, 42, 0.24);
+  transform: translateX(105%);
+  transition: transform 0.28s ease;
+}
+
+.team-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-close {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  margin-left: auto;
+  color: white;
+  background: var(--dark);
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.team-drawer img {
+  width: 100%;
+  height: 240px;
+  margin: 20px 0;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.team-drawer h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 58px;
+  line-height: 0.9;
+  color: var(--dark);
+}
+
+.team-drawer p {
+  margin-top: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.team-drawer h3 {
+  margin-top: 24px;
+  font-size: 18px;
+  color: var(--dark);
+}
+
+.team-drawer ul {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+  padding-left: 18px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.drawer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.drawer-tags span {
+  padding: 8px 10px;
+  color: var(--dark);
+  background: var(--green);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  display: none;
+  background: rgba(8, 17, 31, 0.52);
+  backdrop-filter: blur(4px);
+}
+
+.drawer-backdrop.show {
+  display: block;
+}
+
+/* ======================================================
+  RESPONSIVE
+====================================================== */
+
+@media (max-width: 1050px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .equipos-section {
+    padding: 32px 14px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    min-height: 380px;
+  }
+}
