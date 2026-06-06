@@ -54,7 +54,7 @@ function cerrarMenu() {
 }
 
 function abrirRepositorio() {
-  window.open("https://github.com/", "_blank");
+  window.open("https://github.com/David-RS-Dev/devops-fc", "_blank");
 }
 
 function scrollAEstudiantes() {

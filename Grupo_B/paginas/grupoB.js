@@ -3,8 +3,7 @@ const equiposGrupoB = [
     id: "canada",
     nombre: "Canadá",
     badge: "Anfitrión",
-    imagen:
-      "https://images.unsplash.com/photo-1517935706615-2717063c2225?auto=format&fit=crop&w=900&q=80",
+    imagen: "https://www.ole.com.ar/images/2026/06/02/oJVvJ5iv7_970x660__1.jpg",
     descripcion:
       "Canadá llega como país anfitrión y busca hacer historia en casa.",
     curiosidades: [
@@ -20,7 +19,7 @@ const equiposGrupoB = [
     nombre: "Bosnia y Herzegovina",
     badge: "UEFA",
     imagen:
-      "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=900&q=80",
+      "https://scontent.fuio10-1.fna.fbcdn.net/v/t39.99422-6/698284676_1566490605257466_6548107269195329167_n.png?stp=dst-jpg_tt6&cstp=mx1122x1402&ctp=s1122x1402&_nc_cat=104&cb2=07a86f17-38790ae2&ccb=1-7&_nc_sid=127cfc&_nc_ohc=m5xjvefRrR0Q7kNvwEv6dsE&_nc_oc=Adp93LV2IkHzOgvthrLe86vfSiCQe8_b2yjmZsQtnborh8GOTGiFJgJTwNdmgWIkUHw&_nc_zt=14&_nc_ht=scontent.fuio10-1.fna&_nc_gid=KBkr0Ow9_COAVD4fKNQbXA&_nc_ss=7b2a8&oh=00_Af8-vPRmCOgDE7rKRhTwr_BbkZSwtgmg-0HcRC5HEyGe8w&oe=6A297499",
     descripcion:
       "Bosnia y Herzegovina vuelve a una Copa del Mundo con ilusión renovada.",
     curiosidades: [
@@ -36,7 +35,7 @@ const equiposGrupoB = [
     nombre: "Qatar",
     badge: "AFC",
     imagen:
-      "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80",
+      "https://www.ole.com.ar/images/2025/11/28/yLd198oXf_1290x650__1.jpg",
     descripcion: "Qatar llega tras haber sido anfitrión del Mundial 2022.",
     curiosidades: [
       "Fue país anfitrión de la Copa Mundial 2022.",
@@ -50,8 +49,7 @@ const equiposGrupoB = [
     id: "suiza",
     nombre: "Suiza",
     badge: "Favorito del grupo",
-    imagen:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80",
+    imagen: "https://www.ole.com.ar/2026/05/27/q1G3kfZNe_1200x630__1.jpg",
     descripcion:
       "Suiza aparece como una de las selecciones más sólidas del Grupo B.",
     curiosidades: [
