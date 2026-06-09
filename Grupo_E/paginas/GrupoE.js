@@ -31,7 +31,7 @@ const equiposGrupoD = [
     jugadores: ["Cuco Martina (ex Southampton)", "Leandro Bacuna (Watford)", "Vurnon Anita (ex Newcastle)"],
   },
   {
-    id: "costaMarfil",
+    id: "costaM",
     nombre: "Costa de Marfil",
     badge: "CAF",
     imagen: "../img/costaMarfil.png",
