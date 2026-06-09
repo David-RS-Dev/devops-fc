@@ -112,7 +112,7 @@ function pintarEquipos() {
     card.className = "team-card";
     card.type = "button";
     card.onclick = function () {
-      abrirSidebarEquipo(equipo.id);
+      window.location.href = `${equipo.id}.html`;
     };
 
     card.innerHTML = `
