@@ -114,7 +114,7 @@ function pintarEquiposA() {
     let card = document.createElement("button");
     card.className = "team-card";
     card.onclick = function () {
-      abrirSidebarEquipoA(equipo.id);
+      window.location.href = `${equipo.id}.html`;
     };
 
     card.innerHTML = `
