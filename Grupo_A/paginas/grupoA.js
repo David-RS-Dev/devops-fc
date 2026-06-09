@@ -16,7 +16,7 @@ const equiposGrupoA = [
     jugadores: ["Hirving Lozano", "Edson Álvarez", "Santiago Giménez"],
   },
   {
-    id: "corea",
+    id: "coreadelsur",
     nombre: "Corea del Sur",
     badge: "AFC",
     imagen:
