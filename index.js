@@ -17,6 +17,8 @@ function mostrarSeccion(idSeccion) {
 
   actualizarNavbar(idSeccion);
 
+  history.pushState({seccion:idSeccion},"",`?seccion=${idSeccion}`)
+
   window.scrollTo({
     top: 0,
     behavior: "smooth",
@@ -71,3 +73,12 @@ function scrollAEstudiantes() {
     }
   }, 120);
 }
+
+window.addEventListener("DOMContentLoaded", function (){
+  const parametros = new URLSearchParams (window.location.search)
+  const seccion = parametros.get("seccion")
+  if(seccion === "grupos"){
+    mostrarSeccion("grupos")
+  }
+})
+
