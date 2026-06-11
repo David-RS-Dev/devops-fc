@@ -4,7 +4,7 @@ const equiposGrupoA = [
     nombre: "México",
     badge: "Anfitrión",
     imagen:
-      "https://images.unsplash.com/photo-1517935706615-2717063c2225?auto=format&fit=crop&w=900&q=80",
+      "https://i0.wp.com/laverdadnoticias.com/wp-content/uploads/2025/12/Mexico-en-el-Mundial-2026.jpg",
     descripcion:
       "México llega como país anfitrión con la ilusión de trascender en casa.",
     curiosidades: [
@@ -20,7 +20,7 @@ const equiposGrupoA = [
     nombre: "Corea del Sur",
     badge: "AFC",
     imagen:
-      "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=900&q=80",
+      "https://yrdbjwyvojsmeajcrdli.supabase.co/storage/v1/object/public/news/convocatoria-corea-sur-mundial-2026-hong-myung-bo-son-1779234345508.png",
     descripcion:
       "Corea del Sur llega con su característica intensidad y talento técnico.",
     curiosidades: [
@@ -36,7 +36,7 @@ const equiposGrupoA = [
     nombre: "Sudáfrica",
     badge: "CAF",
     imagen:
-      "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?auto=format&fit=crop&w=900&q=80",
+      "https://welcomeafrica.org/wp-content/uploads/2026/04/Sudafrica-MundialFutbol2026.jpg",
     descripcion:
       "Sudáfrica regresa al Mundial con un equipo joven y lleno de garra.",
     curiosidades: [
@@ -52,7 +52,7 @@ const equiposGrupoA = [
     nombre: "Chequia",
     badge: "UEFA",
     imagen:
-      "https://images.unsplash.com/photo-1600623471616-8c1966c91ff6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://objetos-xlk.estaticos-marca.com/uploads/2026/03/31/69cc36f740376.jpeg",
     descripcion:
       "Chequia llega con la solidez táctica que caracteriza al fútbol centroeuropeo.",
     curiosidades: [
