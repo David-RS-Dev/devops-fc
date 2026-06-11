@@ -520,6 +520,14 @@ a {
   list-style: none;
 }
 
+.teams-list a {
+  padding: 9px 12px;
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
 .teams-list li {
   padding: 9px 12px;
   background: rgba(255, 255, 255, 0.11);
