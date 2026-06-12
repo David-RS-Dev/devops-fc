@@ -236,3 +236,111 @@
     min-height: 380px;
   }
 }
+/* diseño para selecciones */
+.team-detail-card {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 30px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 32px;
+  box-shadow: 0 20px 52px rgba(15, 23, 42, 0.12);
+}
+
+.team-detail-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 26px;
+}
+
+.team-flag {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+.country-flag {
+  width: 96px;
+  height: 64px;
+  object-fit: cover;
+  margin-bottom: 18px;
+  border-radius: 12px;
+}
+
+.team-detail-content h1 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 76px;
+  line-height: 0.9;
+  color: var(--dark);
+}
+
+.team-detail-content p,
+.team-detail-content li {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.team-detail-content h3 {
+  margin-top: 24px;
+  color: var(--dark);
+}
+
+.team-detail-content ul {
+  margin-top: 12px;
+  padding-left: 20px;
+}
+
+@media (max-width: 760px) {
+  .team-detail-card {
+    grid-template-columns: 1fr;
+  }
+
+  .team-detail-image img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .grupo-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .grupo-hero__content {
+    text-align: center;
+  }
+
+  .grupo-hero__content p,
+  .grupo-hero__content .eyebrow {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .grupo-hero__content .hero__actions {
+    justify-content: center;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .grupo-hero {
+    min-height: auto;
+    padding: 42px 18px;
+  }
+
+  .grupo-hero__image,
+  .grupo-hero__image img {
+    min-height: 380px;
+    height: 380px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
