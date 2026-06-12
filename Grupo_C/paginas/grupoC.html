@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Grupo C | DevOps FC</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="stylesheet" href="grupoC.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="../../index.html">
+        <i class='bx bx-football brand__icon'></i>
+        <span>DevOps FC</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-link" onclick="scrollEquiposC()">Equipos</button>
+        <button class="nav-link" onclick="scrollResumenC()">Resumen</button>
+      </nav>
+
+      <div class="topbar__actions">
+        <a class="github-btn" href="../../index.html">
+          <i class='bx bx-left-arrow-alt'></i>
+          <span>Inicio</span>
+        </a>
+
+        <button class="menu-btn" onclick="alternarMenuC()">
+          <i class='bx bx-menu'></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="equipos-section" id="equiposGrupoC">
+      <div class="section-heading">
+        <span class="eyebrow">Equipos</span>
+        <h2>Grupo C</h2>
+        <p>Selecciona una card para abrir la página del equipo con sus datos y curiosidades.</p>
+      </div>
+
+      <div class="team-grid" id="teamGridC"></div>
+    </section>
+  </main>
+
+  <aside class="team-drawer" id="teamDrawerC">
+    <button class="drawer-close" onclick="cerrarSidebarEquipoC()">
+      <i class='bx bx-x'></i>
+    </button>
+
+    <img id="drawerImgC" src="" alt="Equipo">
+    <span class="eyebrow" id="drawerBadgeC">Equipo</span>
+    <h2 id="drawerTitleC">Nombre del equipo</h2>
+    <p id="drawerDescriptionC"></p>
+
+    <h3>Curiosidades</h3>
+    <ul id="drawerCuriositiesC"></ul>
+
+    <h3>Jugadores destacados</h3>
+    <div id="drawerPlayersC" class="drawer-tags"></div>
+  </aside>
+
+  <div class="drawer-backdrop" id="drawerBackdropC" onclick="cerrarSidebarEquipoC()"></div>
+
+  <script src="grupoC.js"></script>
+</body>
+</html>
