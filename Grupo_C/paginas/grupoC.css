@@ -325,3 +325,95 @@
     height: 320px;
   }
 }
+
+/* ======================================================
+  PARTIDOS (calendario por equipo)
+====================================================== */
+
+.matches-section {
+  width: min(1150px, 94%);
+  margin: 0 auto;
+  padding: 10px 0 60px;
+}
+
+.matches-section .section-heading {
+  margin: 0 0 24px;
+  text-align: left;
+}
+
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.match-card {
+  padding: 22px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  transition: transform 0.25s ease;
+}
+
+.match-card:hover {
+  transform: translateY(-6px);
+}
+
+.match-card__label {
+  display: inline-flex;
+  padding: 6px 12px;
+  margin-bottom: 16px;
+  color: var(--dark);
+  background: var(--green);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.match-team {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+}
+
+.match-team img {
+  width: 38px;
+  height: 26px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+}
+
+.match-team span {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.match-vs {
+  margin: 2px 0 2px 6px;
+  color: var(--muted);
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.match-card__info {
+  margin-top: 16px;
+  padding-top: 14px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+@media (max-width: 1050px) {
+  .matches-grid {
+    grid-template-columns: 1fr;
+  }
+}
