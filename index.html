@@ -10,15 +10,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap"
-    rel="stylesheet">
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bangers&family=Montserrat:wght@400;600;700;800;900&display=swap"
+  rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-<p>Hola Mundo</p>
-  <header class="topbar">
+    <div id="intro-loader" class="intro-loader">
+      <img src="mask.svg" alt="Copa Mundial" class="intro-cup">
+
+      <div class="intro-text">
+        <span>FIFA</span>
+        <strong>WORLD CUP 2026</strong>
+      </div>
+    </div>
+    
+    <header class="topbar">
     <div class="topbar__inner">
       <button class="brand" onclick="mostrarSeccion('home')">
         <i class='bx bx-football brand__icon'></i>
@@ -27,6 +35,16 @@
 
       <nav class="main-nav" id="mainNav">
         <button class="nav-link active" data-section="home" onclick="mostrarSeccion('home')">Inicio</button>
+        <button class="nav-link" data-section="momentos" onclick="mostrarSeccion('momentos')">
+          Momentos
+        </button>
+        <button class="nav-link" data-section="clasificacion" onclick="mostrarSeccion('clasificacion')">
+          Clasificación
+        </button>
+
+        <button class="nav-link" data-section="canchas" onclick="mostrarSeccion('canchas')">
+          Canchas
+        </button>
         <button class="nav-link" data-section="grupos" onclick="mostrarSeccion('grupos')">Grupos</button>
         <button class="nav-link" data-section="developers" onclick="mostrarSeccion('developers')">Developers
           2026</button>
@@ -54,99 +72,141 @@
       Las cards ya están escritas directamente en HTML.
     ======================================================= -->
     <section id="home" class="view view--active">
-      <section class="hero">
-        <div class="hero__content">
-          <h1>Colecciona grupos, Album Mundialista.</h1>
-        </div>
+      <section class="home-landing">
 
-        <div class="album-stage">
-          <article class="sticker-card sticker-card--left">
-            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80"
-              alt="Jugador de fútbol">
-            <span>Jugadores Estrellas</span>
-          </article>
+        <section class="home-hero">
+          <div class="home-hero__text">
 
-          <article class="sticker-card sticker-card--main">
-            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=900&q=80"
-              alt="Copa mundialista">
-            <div>
-              <strong>World Cup</strong>
-              <span>Álbum 2026</span>
+            <h1 class="hero-title">
+              Vive el mundial
+              <span id="typewriterText">a lo grande.</span>
+            </h1>
+
+            <p>
+              Explora grupos, mira momentos especiales y descubre una experiencia visual
+              creada por developers para fanáticos del fútbol.
+            </p>
+
+            <div class="hero__actions">
+              <button class="primary-btn" onclick="mostrarSeccion('grupos')">
+                Ver grupos <i class="bx bx-right-arrow-alt"></i>
+              </button>
+
+              <button class="secondary-btn" onclick="abrirMomento(0)">
+                Ver videos <i class="bx bx-play"></i>
+              </button>
             </div>
-          </article>
 
-          <article class="sticker-card sticker-card--right">
-            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=700&q=80"
-              alt="Jugador con balón">
-            <span>Nuevas Promesas</span>
-          </article>
-        </div>
-      </section>
+            <div class="hero-stats">
+              <div>
+                <strong>104</strong>
+                <span>Partidos</span>
+              </div>
 
-      <section class="students-section" id="cardsEstudiantes">
-        <div class="section-heading">
-          <span class="eyebrow">Grupos Mundialistas</span>
-          <h2>Conoce tu grupo favorito</h2>
-          <p>
-            Selecciona tu grupo preferido y conoce sus curiosidades.
-          </p>
-        </div>
+              <div>
+                <strong>48</strong>
+                <span>Selecciones</span>
+              </div>
 
-        <div class="students-grid">
-
-          <a class="student-card" href="Grupo_A/paginas/grupoA.html">
-            <div>
-              <div class="student-avatar">DR</div>
-              <h3>David Rivera</h3>
-              <p>David-RS-Dev</p>
-              <p>Líder del equipo</p>
+              <div>
+                <strong>12</strong>
+                <span>Grupos</span>
+              </div>
             </div>
-            <span>Grupo A</span>
-          </a>
+          </div>
 
-          <a class="student-card" href="Grupo_B/paginas/grupoB.html">
-            <div>
-              <div class="student-avatar">SP</div>
-              <h3>Stalyn Peña</h3>
-              <p>Stalyin</p>
-              <p>Desarrollador</p>
-            </div>
-            <span>Grupo B</span>
-          </a>
+          <div class="home-hero__visual">
+            <img class="hero-player active" src="hero.svg" alt="Jugador de fútbol">
+            <img class="hero-player" src="hero2.svg" alt="Jugador de fútbol alternativo">
+          </div>
+        </section>
 
-          <a class="student-card" href="Grupo_C/paginas/grupoC.html">
-            <div>
-              <div class="student-avatar">SC</div>
-              <h3>Jose Luis Araujo</h3>
-              <p>Sonicse2099</p>
-              <p>Desarrollador</p>
-            </div>
-            <span>Grupo C</span>
-          </a>
+        <section class="home-hosts">
+          <p>Anfitriones del Mundial 2026</p>
 
-          <a class="student-card" href="Grupo_D/paginas/grupoD.html">
-            <div>
-              <div class="student-avatar">XP</div>
-              <h3>Xavo Palacios</h3>
-              <p>xavopalacios</p>
-              <p>Desarrollador</p>
-            </div>
-            <span>Grupo D</span>
-          </a>
+          <div class="hosts-slider">
+            <div class="hosts-track">
+              <span class="host-canada">Canadá</span>
+              <span class="host-usa">Estados Unidos</span>
+              <span class="host-mexico">México</span>
+              <span class="host-canada">Toronto</span>
+              <span class="host-usa">Dallas</span>
+              <span class="host-mexico">Guadalajara</span>
 
-          <a class="student-card" href="Grupo_E/paginas/GrupoE.html">
-            <div>
-              <div class="student-avatar">VP</div>
-              <h3>Víctor Pilachanga</h3>
-              <p>Victor-DREC</p>
-              <p>Desarrollador</p>
+              <span class="host-canada">Canadá</span>
+              <span class="host-usa">Estados Unidos</span>
+              <span class="host-mexico">México</span>
+              <span class="host-canada">Toronto</span>
+              <span class="host-usa">Dallas</span>
+              <span class="host-mexico">Guadalajara</span>
             </div>
-            <span>Grupo E</span>
-          </a>
-        </div>
+          </div>
+        </section>
+
+        <section class="home-moments">
+          <div class="home-moments-header">
+            <div class="home-section-title">
+              <span class="eyebrow">Highlights</span>
+              <h2>Momentos especiales</h2>
+              <p>Vive la fiebre mundialista en grande, vive los momentos de la Copa Mundial de la FIFA™</p>
+            </div>
+
+            <div class="moments-actions">
+              <button onclick="moverMomentosHome(-1)">
+                <i class="bx bx-chevron-left"></i>
+              </button>
+
+              <button onclick="moverMomentosHome(1)">
+                <i class="bx bx-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="home-moments-grid" id="homeMomentsGrid">
+            <!-- tus article van aquí -->
+          </div>
+        </section>
+
+        <section class="album-sale">
+          <div>
+            <span class="eyebrow">Álbum mundialista</span>
+            <h2>Colecciona la emoción del Mundial 2026</h2>
+            <p>
+              Compra tu álbum virtual, descubre selecciones, revive momentos únicos
+              y comparte la experiencia con tus amigos.
+            </p>
+
+            <button class="secondary-btn">
+              Comprar álbum <i class="bx bx-cart"></i>
+            </button>
+          </div>
+
+          <img src="album.png" alt="Album del mundial">
+        </section>
+
       </section>
     </section>
 
+    <!-- ======================================================
+      Momentos
+    ======================================================= -->
+    <section id="momentos" class="view">
+      <section class="momentos-page">
+        <div class="momentos-top">
+          <div>
+            <span class="eyebrow">Videos</span>
+            <h2>Momentos especiales</h2>
+            <p>Desliza hacia abajo para ver el siguiente momento.</p>
+          </div>
+
+          <button class="secondary-btn" onclick="mostrarSeccion('home')">
+            Volver al inicio
+          </button>
+        </div>
+
+        <div class="video-feed" id="videoFeed"></div>
+      </section>
+    </section>
     <!-- ======================================================
       GRUPOS 2026
     ======================================================= -->
@@ -197,7 +257,7 @@
             <div class="group-card__top">
               <div>
                 <h3>Grupo C</h3>
-                <small>Jose Luis Araujo Chacon</small>
+                <small>Jose Luis Araujo</small>
               </div>
               <span class="group-letter">C</span>
             </div>
@@ -225,21 +285,21 @@
             </ul>
           </a>
 
-          <div class="group-card" onclick="window.location.href='Grupo_E/paginas/GrupoE.html'">
+          <a class="group-card" href="Grupo_E/paginas/GrupoE.html">
             <div class="group-card__top">
               <div>
                 <h3>Grupo E</h3>
-                <small>Victor Pilachanga</small>
+                <small>Víctor Pilachanga</small>
               </div>
               <span class="group-letter">E</span>
             </div>
-            <div class="teams-list">
-              <a href="Grupo_E/paginas/alemania.html">Alemania</a>
-              <a href="Grupo_E/paginas/curazao.html">Curazao</a>
-              <a href="Grupo_E/paginas/costaM.html">Costa de Marfil</a>
-              <a href="Grupo_E/paginas/ecuador.html">Ecuador</a>
-            </div>
-          </div>
+            <ul class="teams-list">
+              <li>Alemania</li>
+              <li>Curazao</li>
+              <li>Costa de Marfil</li>
+              <li>Ecuador</li>
+            </ul>
+          </a>
 
           <article class="group-card disabled">
             <div class="group-card__top">
@@ -460,6 +520,7 @@
       Volver al inicio <i class='bx bx-up-arrow-alt'></i>
     </button>
   </footer>
+  
 
   <script src="index.js"></script>
 </body>
