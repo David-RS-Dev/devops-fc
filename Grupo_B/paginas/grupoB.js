@@ -73,28 +73,6 @@ function alternarMenu() {
   }
 }
 
-function scrollEquipos() {
-  let seccion = obtenerElemento("equiposGrupo");
-
-  if (seccion !== null) {
-    seccion.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
-}
-
-function scrollResumen() {
-  let seccion = obtenerElemento("resumenGrupo");
-
-  if (seccion !== null) {
-    seccion.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
-}
-
 function pintarEquipos() {
   let contenedor = obtenerElemento("teamGrid");
 
@@ -124,51 +102,6 @@ function pintarEquipos() {
 
     contenedor.appendChild(card);
   }
-}
-
-function buscarEquipo(idEquipo) {
-  for (let i = 0; i < equiposGrupoB.length; i++) {
-    if (equiposGrupoB[i].id === idEquipo) {
-      return equiposGrupoB[i];
-    }
-  }
-
-  return null;
-}
-
-function abrirSidebarEquipo(idEquipo) {
-  let equipo = buscarEquipo(idEquipo);
-
-  if (equipo === null) {
-    return;
-  }
-
-  obtenerElemento("drawerImg").src = equipo.imagen;
-  obtenerElemento("drawerImg").alt = equipo.nombre;
-  obtenerElemento("drawerBadge").innerText = equipo.badge;
-  obtenerElemento("drawerTitle").innerText = equipo.nombre;
-  obtenerElemento("drawerDescription").innerText = equipo.descripcion;
-
-  let curiosidades = obtenerElemento("drawerCuriosities");
-  curiosidades.innerHTML = "";
-
-  for (let i = 0; i < equipo.curiosidades.length; i++) {
-    let item = document.createElement("li");
-    item.innerText = equipo.curiosidades[i];
-    curiosidades.appendChild(item);
-  }
-
-  let jugadores = obtenerElemento("drawerPlayers");
-  jugadores.innerHTML = "";
-
-  for (let i = 0; i < equipo.jugadores.length; i++) {
-    let etiqueta = document.createElement("span");
-    etiqueta.innerText = equipo.jugadores[i];
-    jugadores.appendChild(etiqueta);
-  }
-
-  obtenerElemento("teamDrawer").classList.add("open");
-  obtenerElemento("drawerBackdrop").classList.add("show");
 }
 
 function cerrarSidebarEquipo() {
