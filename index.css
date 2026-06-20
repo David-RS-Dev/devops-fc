@@ -7,6 +7,7 @@
   --surface: #ffffff;
   --surface-2: #f7f9fc;
   --text: #0f172a;
+  --dark-gray: #20242d;
   --muted: #64748b;
   --border: rgba(15, 23, 42, 0.11);
   --dark: #08111f;
@@ -1121,6 +1122,424 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 12px;
   backdrop-filter: blur(10px);
+}
+/* ================= CLASIFICACIÓN PRO ================= */
+
+.ranking-section,
+.stadiums-section {
+  width: min(1500px, 94%);
+  margin: 0 auto;
+  padding: 25px 0 90px;
+}
+
+.ranking-tabs {
+  width: min(820px, 100%);
+  margin: 0 auto 34px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--dark-gray);
+  border-radius: 50px;
+  padding: 6px;
+}
+
+.ranking-tab {
+  min-height: 52px;
+  color: rgba(255, 255, 255, 0.65);
+  background: transparent;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.ranking-tab.active {
+  color: white;
+  background: var(--blue);
+}
+
+.ranking-panel {
+  display: none;
+}
+
+.ranking-panel.active {
+  display: grid;
+  gap: 28px;
+}
+
+.ranking-group {
+  overflow: hidden;
+  padding: 24px;
+  background: var(--dark-gray);
+  border-radius: 24px;
+  color: white;
+}
+
+.ranking-group h3 {
+  margin-bottom: 14px;
+  font-size: 28px;
+}
+
+.ranking-table-wrap {
+  overflow-x: auto;
+}
+
+.ranking-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+}
+
+.ranking-table th {
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 700;
+  text-align: left;
+}
+
+.ranking-table th,
+.ranking-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.team-name {
+  min-width: 230px;
+  font-weight: 800;
+}
+
+.team-name span {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+.bracket-board {
+  overflow-x: auto;
+  padding: 26px;
+  display: grid;
+  grid-template-columns: repeat(4, 280px);
+  gap: 28px;
+  background: #20242d;
+  border-radius: 28px;
+  color: white;
+}
+
+.bracket-col {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.bracket-col h3 {
+  margin-bottom: 8px;
+}
+
+.bracket-card {
+  padding: 18px;
+  background: #2b303a;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 18px;
+}
+
+.bracket-card small {
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 800;
+}
+
+.bracket-card p {
+  margin-top: 12px;
+  font-weight: 900;
+}
+
+/* ================= ESTADIOS OFICIALES ================= */
+
+.stadiums-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.stadium-card {
+  overflow: hidden;
+  background: white;
+  border-radius: 18px;
+}
+
+.stadium-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.stadium-card div {
+  padding: 20px;
+}
+
+.stadium-card span {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.stadium-card h3 {
+  margin-top: 8px;
+  font-size: 22px;
+}
+
+.stadium-card p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+@media (max-width: 1050px) {
+  .stadiums-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ranking-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .stadiums-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bracket-board {
+    grid-template-columns: repeat(4, 260px);
+  }
+}
+/* ================= BRACKET ESTILO MUNDIAL ================= */
+
+.world-bracket {
+  position: relative;
+  min-height: 760px;
+  padding: 34px;
+  overflow-x: auto;
+  color: white;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 215, 80, 0.16),
+      transparent 24%
+    ),
+    #020202;
+  border-radius: 30px;
+}
+
+.world-bracket h3 {
+  text-align: center;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.bracket-center {
+  position: absolute;
+  inset: 150px 0 auto;
+  margin: auto;
+  width: 260px;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.bracket-center img {
+  width: 180px;
+  height: 280px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 28px rgba(255, 215, 80, 0.45));
+}
+
+.bracket-center strong {
+  margin-top: 12px;
+  font-size: 24px;
+}
+
+.bracket-center span {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 800;
+}
+
+.bracket-side {
+  position: absolute;
+  top: 110px;
+  width: 280px;
+  display: grid;
+  gap: 18px;
+}
+
+.bracket-left {
+  left: 28px;
+}
+
+.bracket-right {
+  right: 28px;
+}
+
+.world-match {
+  position: relative;
+  display: grid;
+  gap: 8px;
+}
+
+.world-match div {
+  width: 86px;
+  min-height: 34px;
+  display: grid;
+  place-items: center;
+  color: #111827;
+  background: white;
+  border-radius: 7px;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.bracket-right .world-match {
+  justify-items: end;
+}
+
+.world-match::after {
+  content: "";
+  position: absolute;
+  top: 34px;
+  width: 90px;
+  height: 46px;
+  border-top: 2px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.bracket-left .world-match::after {
+  left: 94px;
+  border-right: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.bracket-right .world-match::after {
+  right: 94px;
+  border-left: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 900px) {
+  .world-bracket {
+    min-width: 920px;
+  }
+}
+/* ================= BRACKET TIPO LLAVE ================= */
+
+.knockout-bracket {
+  min-width: 1100px;
+  padding: 34px;
+  overflow-x: auto;
+  color: white;
+  background: var(--dark-gray);
+  border-radius: 28px;
+}
+
+.knockout-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.knockout-title h3 {
+  font-size: clamp(38px, 6vw, 50px);
+  font-weight: 900;
+}
+
+.knockout-title p {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+}
+
+.knockout-layout {
+  display: grid;
+  grid-template-columns: 1fr 260px 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.bracket-half {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  align-items: center;
+}
+
+.bracket-half.right {
+  direction: ltr;
+}
+
+.bracket-half.right * {
+  direction: ltr;
+}
+
+.bracket-round {
+  display: grid;
+  gap: 28px;
+}
+
+.bracket-round h4 {
+  text-align: center;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.match-box {
+  position: relative;
+  display: grid;
+  gap: 8px;
+}
+
+.match-box div {
+  min-height: 42px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.champion-center {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.champion-center img {
+  width: 150px;
+  height: 230px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 24px rgba(255, 255, 255, 0.25));
+}
+
+.champion-center span {
+  margin-top: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 900;
+}
+
+.champion-center strong {
+  margin-top: 10px;
+  padding: 12px 24px;
+  color: var(--text);
+  background: white;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.champion-center small {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .knockout-bracket {
+    min-width: 1180px;
+  }
 }
 
 /* ======================================================

@@ -117,7 +117,6 @@
 
           <div class="home-hero__visual">
             <img class="hero-player active" src="hero.svg" alt="Jugador de fútbol">
-            <img class="hero-player" src="hero2.svg" alt="Jugador de fútbol alternativo">
           </div>
         </section>
 
@@ -416,6 +415,40 @@
       </section>
     </section>
 
+    <!-- ======================================================
+      CLASIFICACIÓN
+    ======================================================= -->
+    <section id="clasificacion" class="view">
+      <section class="ranking-section">
+        <div class="section-heading">
+          <span class="eyebrow">Mundial 2026</span>
+          <h2>Clasificación</h2>
+          <p>Fase de grupos y fase de eliminación directa.</p>
+        </div>
+
+        <div class="ranking-tabs">
+          <button class="ranking-tab active" onclick="mostrarRankingTab('gruposRanking')">Fase de grupos</button>
+          <button class="ranking-tab" onclick="mostrarRankingTab('eliminatoriasRanking')">Eliminación directa</button>
+        </div>
+
+        <div id="gruposRanking" class="ranking-panel active"></div>
+        <div id="eliminatoriasRanking" class="ranking-panel"></div>
+      </section>
+    </section>
+    <!-- ======================================================
+      CANCHAS
+    ======================================================= -->
+    <section id="canchas" class="view">
+      <section class="stadiums-section">
+        <div class="section-heading">
+          <span class="eyebrow">Sedes oficiales</span>
+          <h2>Canchas mundialistas</h2>
+          <p>Los 16 estadios del Mundial 2026 en Canadá, México y Estados Unidos.</p>
+        </div>
+
+        <div class="stadiums-grid" id="stadiumsGrid"></div>
+      </section>
+    </section>
     <!-- ======================================================
       DEVELOPERS
     ======================================================= -->
