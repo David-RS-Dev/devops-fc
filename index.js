@@ -329,6 +329,15 @@ const gruposMundial = [
       ["🇧🇦", "Bosnia y Herzegovina", 1, 0, 1, 0, 1, 1, 0, 1],
     ],
   },
+  {
+    grupo: "Grupo C",
+    equipos: [
+      ["🇧🇷", "Brasil", 2, 1, 1, 0, 4, 1, 3, 4],
+      ["🇲🇦", "Marruecos", 2, 1, 1, 0, 2, 1, 1, 4],
+      ["🇭🇹", "Haití", 2, 1, 0, 1, 1, 1, 0, 3],
+      ["sco", "Escocia", 2, 0, 0, 2, 0, 4, -4, 0],
+    ],
+  },
 ];
 
 const estadiosMundial = [
