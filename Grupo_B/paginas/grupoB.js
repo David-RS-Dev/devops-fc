@@ -18,8 +18,7 @@ const equiposGrupoB = [
     id: "bosnia",
     nombre: "Bosnia y Herzegovina",
     badge: "UEFA",
-    imagen:
-      "https://scontent.fuio10-1.fna.fbcdn.net/v/t39.99422-6/698284676_1566490605257466_6548107269195329167_n.png?stp=dst-jpg_tt6&cstp=mx1122x1402&ctp=s1122x1402&_nc_cat=104&cb2=07a86f17-38790ae2&ccb=1-7&_nc_sid=127cfc&_nc_ohc=m5xjvefRrR0Q7kNvwEv6dsE&_nc_oc=Adp93LV2IkHzOgvthrLe86vfSiCQe8_b2yjmZsQtnborh8GOTGiFJgJTwNdmgWIkUHw&_nc_zt=14&_nc_ht=scontent.fuio10-1.fna&_nc_gid=KBkr0Ow9_COAVD4fKNQbXA&_nc_ss=7b2a8&oh=00_Af8-vPRmCOgDE7rKRhTwr_BbkZSwtgmg-0HcRC5HEyGe8w&oe=6A297499",
+    imagen: "https://www.ole.com.ar/images/2026/05/27/7ZRMfB-sC_970x660__1.jpg",
     descripcion:
       "Bosnia y Herzegovina vuelve a una Copa del Mundo con ilusión renovada.",
     curiosidades: [
@@ -74,28 +73,6 @@ function alternarMenu() {
   }
 }
 
-function scrollEquipos() {
-  let seccion = obtenerElemento("equiposGrupo");
-
-  if (seccion !== null) {
-    seccion.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
-}
-
-function scrollResumen() {
-  let seccion = obtenerElemento("resumenGrupo");
-
-  if (seccion !== null) {
-    seccion.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }
-}
-
 function pintarEquipos() {
   let contenedor = obtenerElemento("teamGrid");
 
@@ -125,51 +102,6 @@ function pintarEquipos() {
 
     contenedor.appendChild(card);
   }
-}
-
-function buscarEquipo(idEquipo) {
-  for (let i = 0; i < equiposGrupoB.length; i++) {
-    if (equiposGrupoB[i].id === idEquipo) {
-      return equiposGrupoB[i];
-    }
-  }
-
-  return null;
-}
-
-function abrirSidebarEquipo(idEquipo) {
-  let equipo = buscarEquipo(idEquipo);
-
-  if (equipo === null) {
-    return;
-  }
-
-  obtenerElemento("drawerImg").src = equipo.imagen;
-  obtenerElemento("drawerImg").alt = equipo.nombre;
-  obtenerElemento("drawerBadge").innerText = equipo.badge;
-  obtenerElemento("drawerTitle").innerText = equipo.nombre;
-  obtenerElemento("drawerDescription").innerText = equipo.descripcion;
-
-  let curiosidades = obtenerElemento("drawerCuriosities");
-  curiosidades.innerHTML = "";
-
-  for (let i = 0; i < equipo.curiosidades.length; i++) {
-    let item = document.createElement("li");
-    item.innerText = equipo.curiosidades[i];
-    curiosidades.appendChild(item);
-  }
-
-  let jugadores = obtenerElemento("drawerPlayers");
-  jugadores.innerHTML = "";
-
-  for (let i = 0; i < equipo.jugadores.length; i++) {
-    let etiqueta = document.createElement("span");
-    etiqueta.innerText = equipo.jugadores[i];
-    jugadores.appendChild(etiqueta);
-  }
-
-  obtenerElemento("teamDrawer").classList.add("open");
-  obtenerElemento("drawerBackdrop").classList.add("show");
 }
 
 function cerrarSidebarEquipo() {
