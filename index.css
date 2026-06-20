@@ -1,7 +1,3 @@
-/* ======================================================
-  DEVOPS FC 
-====================================================== */
-
 :root {
   --bg: #eef3f8;
   --surface: #ffffff;
@@ -49,8 +45,6 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-/* ================= INTRO INICIAL ================= */
 
 .intro-loader {
   position: fixed;
@@ -104,30 +98,6 @@ a {
 .intro-loader--hide {
   animation: loaderHide 0.8s ease forwards;
 }
-
-@keyframes textIntro {
-  from {
-    transform: translateY(24px);
-    opacity: 0;
-  }
-
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes loaderHide {
-  to {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-}
-
-/* ======================================================
-  NAVBAR
-====================================================== */
 
 .topbar {
   position: sticky;
@@ -226,10 +196,6 @@ a {
   font-size: 24px;
 }
 
-/* ======================================================
-  COMMON
-====================================================== */
-
 .view {
   display: none;
 }
@@ -237,17 +203,6 @@ a {
 .view--active {
   display: block;
   animation: fadeView 0.3s ease both;
-}
-
-@keyframes fadeView {
-  from {
-    opacity: 0;
-    transform: translateY(14px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .eyebrow {
@@ -314,9 +269,6 @@ a {
   line-height: 1.7;
 }
 
-/* ======================================================
-  HERO
-====================================================== */
 .home-landing {
   width: min(1500px, 95%);
   margin: 0 auto;
@@ -364,9 +316,16 @@ a {
 .hero-player {
   width: 100%;
   height: 520px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 34px;
   mask-image: linear-gradient(white 80%, transparent);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(0.96);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .home-brands {
@@ -405,11 +364,13 @@ a {
 .home-section-title {
   max-width: 760px;
   margin-bottom: 30px;
+  text-align: start;
+  margin-top: -40px;
 }
 
 .home-section-title h2 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(58px, 8vw, 92px);
+  font-size: 65px;
   line-height: 0.86;
 }
 
@@ -511,12 +472,13 @@ a {
   border-radius: 30px;
 }
 
-/* ================= MOMENTOS HOME MEJORADO ================= */
-
 .home-moments-header {
-  margin-bottom: 0;
+  margin-bottom: 28px;
   display: grid;
-  align-content: center;
+  align-content: end;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
 }
 
 .moments-actions {
@@ -529,13 +491,16 @@ a {
 }
 
 .moments-actions button {
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   color: white;
-  background: var(--dark);
+  background: var(--blue);
   border-radius: 50%;
   font-size: 30px;
   box-shadow: 0 18px 45px rgba(15, 23, 42, 0.18);
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--surface);
 }
 
 .home-moment-card p {
@@ -545,8 +510,6 @@ a {
   color: rgba(255, 255, 255, 0.78);
   line-height: 1.5;
 }
-
-/* ================= ESTADÍSTICAS HERO ================= */
 
 .hero-stats {
   margin-top: 32px;
@@ -578,8 +541,6 @@ a {
   text-transform: uppercase;
 }
 
-/* ================= ANFITRIONES SLIDER ================= */
-
 .home-hosts {
   margin: 28px 0 70px;
   padding: 36px 0;
@@ -608,16 +569,6 @@ a {
   display: flex;
   gap: 70px;
   animation: hostsMove 22s linear infinite;
-}
-
-@keyframes hostsMove {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 .hosts-track span {
@@ -664,55 +615,9 @@ a {
   animation: cursorBlink 0.8s infinite;
 }
 
-@keyframes cursorBlink {
-  50% {
-    opacity: 0;
-  }
-}
-
-.home-hero__visual {
-  position: relative;
-}
-
-.hero-player {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 520px;
-  object-fit: contain;
-  opacity: 0;
-  transform: scale(0.96);
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
-  mask-image: linear-gradient(white 80%, transparent);
-}
-
 .hero-player.active {
   opacity: 1;
   transform: scale(1);
-}
-
-/* ================= MOMENTOS CON BOTONES ================= */
-
-.home-moments-header {
-  margin-bottom: 28px;
-  display: flex;
-  align-items: end;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.moments-actions button {
-  width: 52px;
-  height: 52px;
-  display: grid;
-  place-items: center;
-  color: white;
-  border: 2px solid var(--surface);
-  background: var(--blue);
-  border-radius: 50%;
-  font-size: 30px;
 }
 
 .home-moments-grid::-webkit-scrollbar {
@@ -733,26 +638,9 @@ a {
   margin-bottom: 40px;
 }
 
-.home-moments-header {
-  display: grid;
-  align-content: end;
-}
-
-.home-section-title {
-  text-align: start;
-  margin-top: -40px;
-}
-
-.home-section-title h2 {
-  font-size: 65px;
-}
-
 .home-moments-grid {
-  border-radius: 15px !important;
-}
-.home-moments-grid {
-  background: var(--dark);
   border-radius: 15px 0 0 15px;
+  background: var(--dark);
   display: flex;
   gap: 18px;
   overflow-x: auto;
@@ -760,16 +648,6 @@ a {
   scroll-snap-type: x mandatory;
   padding: 12px 12px 20px;
 }
-
-.home-moment-card p {
-  position: relative;
-  z-index: 2;
-  margin-top: 10px;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.5;
-}
-
-/* ================= SECCIÓN MOMENTOS ================= */
 
 .momentos-page {
   width: min(1100px, 94%);
@@ -801,8 +679,8 @@ a {
   height: 82vh;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
-  border-radius: 34px;
-  background: #07111f;
+  border-radius: 28px;
+  background: #020617;
   box-shadow: var(--shadow);
 }
 
@@ -821,8 +699,13 @@ a {
   display: grid;
   place-items: center;
   scroll-snap-align: start;
-  background: #000;
+  background: #020617;
   overflow: hidden;
+  min-height: 82vh;
+  padding: 36px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: center;
 }
 
 .video-item iframe {
@@ -834,13 +717,13 @@ a {
 }
 
 .video-info-feed {
-  position: absolute;
+  position: static;
   left: 28px;
   bottom: 28px;
   z-index: 2;
-  max-width: 420px;
+  max-width: 460px;
   color: white;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .video-info-feed span {
@@ -851,37 +734,17 @@ a {
 }
 
 .video-info-feed h3 {
-  margin-top: 10px;
+  margin-top: 14px;
   font-family: "Bebas Neue", sans-serif;
-  font-size: 46px;
-  line-height: 0.9;
+  font-size: clamp(48px, 6vw, 82px);
+  line-height: 0.85;
 }
 
 .video-info-feed p {
-  margin-top: 10px;
-  color: rgba(255, 255, 255, 0.78);
+  margin-top: 18px;
+  color: rgba(255, 255, 255, 0.72);
   line-height: 1.6;
-}
-
-/* ================= MOMENTOS VIDEO MEJORADO ================= */
-
-.video-feed {
-  height: 82vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  border-radius: 28px;
-  background: #020617;
-}
-
-.video-item {
-  min-height: 82vh;
-  padding: 36px;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 32px;
-  align-items: center;
-  scroll-snap-align: start;
-  background: #020617;
+  font-size: 18px;
 }
 
 .video-frame {
@@ -898,51 +761,6 @@ a {
   border: 0;
 }
 
-.video-info-feed {
-  position: static;
-  max-width: 460px;
-  color: white;
-  pointer-events: auto;
-}
-
-.video-info-feed span {
-  color: var(--green);
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.video-info-feed h3 {
-  margin-top: 14px;
-  font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(48px, 6vw, 82px);
-  line-height: 0.85;
-}
-
-.video-info-feed p {
-  margin-top: 18px;
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 18px;
-  line-height: 1.6;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 900px) {
-  .video-item {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-
-  .classification-grid,
-  .stadiums-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ======================================================
-  SECTIONS
-====================================================== */
-
 .students-section,
 .groups-section {
   width: min(1500px, 94%);
@@ -958,6 +776,7 @@ a {
 
 .members-grid {
   margin-bottom: 25px;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .students-grid,
@@ -968,10 +787,6 @@ a {
 }
 
 .students-grid {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.members-grid {
   grid-template-columns: repeat(5, 1fr);
 }
 
@@ -1048,8 +863,6 @@ a {
   font-size: 32px;
 }
 
-/* ================= Desarroladores================= */
-
 .member-avatar-img {
   object-fit: cover;
 }
@@ -1077,10 +890,6 @@ a {
   transform: translateY(-6px);
 }
 
-/* ======================================================
-  GROUPS
-====================================================== */
-
 .groups-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1102,6 +911,7 @@ a {
   border-radius: 28px;
   box-shadow: 0 20px 52px rgba(15, 23, 42, 0.13);
   transition: transform 0.25s ease;
+  position: relative;
 }
 
 .group-card.disabled {
@@ -1156,10 +966,6 @@ a {
   backdrop-filter: blur(10px);
 }
 
-.group-card {
-  position: relative;
-}
-
 .teams-list a,
 .teams-list li {
   transition: 0.25s ease;
@@ -1193,12 +999,7 @@ a {
   background: var(--green);
   border-radius: 50%;
   font-size: 22px;
-
-  &:hover {
-    transform: translateY(2px);
-  }
 }
-/* ================= CLASIFICACIÓN PRO ================= */
 
 .ranking-section,
 .stadiums-section {
@@ -1322,8 +1123,6 @@ a {
   font-weight: 900;
 }
 
-/* ================= ESTADIOS OFICIALES ================= */
-
 .stadiums-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1363,27 +1162,6 @@ a {
   color: var(--muted);
   font-weight: 700;
 }
-
-@media (max-width: 1050px) {
-  .stadiums-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .ranking-tabs {
-    grid-template-columns: 1fr;
-  }
-
-  .stadiums-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .bracket-board {
-    grid-template-columns: repeat(4, 260px);
-  }
-}
-/* ================= BRACKET ESTILO MUNDIAL ================= */
 
 .world-bracket {
   position: relative;
@@ -1495,13 +1273,6 @@ a {
   border-left: 2px solid rgba(255, 255, 255, 0.35);
 }
 
-@media (max-width: 900px) {
-  .world-bracket {
-    min-width: 920px;
-  }
-}
-/* ================= BRACKET TIPO LLAVE ================= */
-
 .knockout-bracket {
   min-width: 1100px;
   padding: 34px;
@@ -1611,16 +1382,6 @@ a {
   font-weight: 800;
 }
 
-@media (max-width: 900px) {
-  .knockout-bracket {
-    min-width: 1180px;
-  }
-}
-
-/* ======================================================
-  FOOTER
-====================================================== */
-
 .footer {
   width: min(1280px, 94%);
   margin: 0 auto;
@@ -1647,9 +1408,96 @@ a {
   border-radius: 999px;
 }
 
-/* ======================================================
-  RESPONSIVE
-====================================================== */
+@keyframes textIntro {
+  from {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes loaderHide {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@keyframes fadeView {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hostsMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .video-item {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .classification-grid,
+  .stadiums-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1050px) {
+  .stadiums-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .ranking-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .stadiums-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bracket-board {
+    grid-template-columns: repeat(4, 260px);
+  }
+}
+
+@media (max-width: 900px) {
+  .world-bracket {
+    min-width: 920px;
+  }
+}
+
+@media (max-width: 900px) {
+  .knockout-bracket {
+    min-width: 1180px;
+  }
+}
 
 @media (max-width: 1050px) {
   .home-hero {
@@ -1773,6 +1621,7 @@ a {
   .home-moment-card {
     min-width: 82vw;
   }
+
   .home-hero,
   .album-sale {
     display: flex;
@@ -1789,9 +1638,6 @@ a {
   }
 
   .home-moments-grid {
-    grid-template-columns: 1fr;
-  }
-  .home-moments {
     grid-template-columns: 1fr;
   }
 

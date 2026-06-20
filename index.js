@@ -512,7 +512,7 @@ function pintarEliminatorias() {
         </div>
 
         <div class="champion-center">
-          <img src="mask.svg" alt="Copa Mundial">
+          <img src="img/mask.svg" alt="Copa Mundial">
           <span>FINAL</span>
           <strong>A definir</strong>
           <small>Campeón Mundial 2026</small>

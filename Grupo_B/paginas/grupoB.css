@@ -1,5 +1,5 @@
 /* ======================================================
-  SCROLLBAR CUSTOM
+  GRUPO B - CSS LIMPIO
 ====================================================== */
 
 ::-webkit-scrollbar {
@@ -13,18 +13,14 @@
 
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
   border: 2px solid transparent;
+  border-radius: 999px;
   backdrop-filter: blur(10px);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
 }
-
-/* ======================================================
-  GRUPO B - PÁGINA INDIVIDUAL
-====================================================== */
 
 .equipos-section {
   width: min(1500px, 94%);
@@ -39,12 +35,12 @@
 }
 
 .team-card {
+  position: relative;
   min-height: 440px;
   padding: 18px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  position: relative;
   overflow: hidden;
   color: white;
   background: var(--dark);
@@ -60,9 +56,9 @@
 .team-card img {
   position: absolute;
   inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
   object-fit: cover;
 }
 
@@ -107,102 +103,6 @@
   line-height: 1.5;
 }
 
-/* Drawer lateral */
-.team-drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 250;
-  width: min(430px, 92vw);
-  height: 100vh;
-  padding: 22px;
-  overflow-y: auto;
-  background: white;
-  box-shadow: -22px 0 70px rgba(15, 23, 42, 0.24);
-  transform: translateX(105%);
-  transition: transform 0.28s ease;
-}
-
-.team-drawer.open {
-  transform: translateX(0);
-}
-
-.drawer-close {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  margin-left: auto;
-  color: white;
-  background: var(--dark);
-  border-radius: 50%;
-  font-size: 24px;
-}
-
-.team-drawer img {
-  width: 100%;
-  height: 240px;
-  margin: 20px 0;
-  object-fit: cover;
-  border-radius: 22px;
-}
-
-.team-drawer h2 {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 58px;
-  line-height: 0.9;
-}
-
-.team-drawer p {
-  margin-top: 12px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.team-drawer h3 {
-  margin-top: 24px;
-  font-size: 18px;
-}
-
-.team-drawer ul {
-  display: grid;
-  gap: 10px;
-  margin-top: 12px;
-  padding-left: 18px;
-  color: var(--text);
-  line-height: 1.5;
-}
-
-.drawer-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 12px;
-}
-
-.drawer-tags span {
-  padding: 8px 10px;
-  color: var(--dark);
-  background: var(--green);
-  border-radius: 999px;
-  font-size: 12px;
-  font-weight: 900;
-}
-
-.drawer-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 220;
-  display: none;
-  background: rgba(8, 17, 31, 0.52);
-  backdrop-filter: blur(4px);
-}
-
-.drawer-backdrop.show {
-  display: block;
-}
-
-/* diseño para selecciones */
 .team-detail-card {
   max-width: 1150px;
   margin: 0 auto;
@@ -225,15 +125,15 @@
 
 .team-flag {
   display: flex;
-  gap: 25px;
   align-items: center;
+  gap: 25px;
 }
 
 .country-flag {
   width: 96px;
   height: 64px;
-  object-fit: cover;
   margin-bottom: 18px;
+  object-fit: cover;
   border-radius: 12px;
 }
 
@@ -260,60 +160,21 @@
   padding-left: 20px;
 }
 
-@media (max-width: 760px) {
-  .team-detail-card {
-    grid-template-columns: 1fr;
-  }
-
-  .team-detail-image img {
-    height: 320px;
-  }
+.drawer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
 }
 
-@media (max-width: 1050px) {
-  .grupo-hero {
-    grid-template-columns: 1fr;
-  }
-
-  .grupo-hero__content {
-    text-align: center;
-  }
-
-  .grupo-hero__content p,
-  .grupo-hero__content .eyebrow {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .grupo-hero__content .hero__actions {
-    justify-content: center;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.drawer-tags span {
+  padding: 8px 10px;
+  color: var(--dark);
+  background: var(--green);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
 }
-
-@media (max-width: 760px) {
-  .grupo-hero {
-    min-height: auto;
-    padding: 42px 18px;
-  }
-
-  .grupo-hero__image,
-  .grupo-hero__image img {
-    min-height: 380px;
-    height: 380px;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ======================================================
-  PARTIDOS (calendario por equipo)
-====================================================== */
 
 .matches-section {
   width: min(1150px, 94%);
@@ -347,8 +208,8 @@
 
 .match-card__label {
   display: inline-flex;
-  padding: 6px 12px;
   margin-bottom: 16px;
+  padding: 6px 12px;
   color: var(--dark);
   background: var(--green);
   border-radius: 999px;
@@ -369,21 +230,21 @@
   width: 38px;
   height: 26px;
   object-fit: cover;
-  border-radius: 5px;
   border: 1px solid var(--border);
+  border-radius: 5px;
 }
 
 .match-team span {
+  color: var(--text);
   font-size: 18px;
   font-weight: 700;
-  color: var(--text);
 }
 
 .match-vs {
   margin: 2px 0 2px 6px;
   color: var(--muted);
-  font-weight: 900;
   font-size: 13px;
+  font-weight: 900;
 }
 
 .match-card__info {
@@ -393,12 +254,39 @@
   justify-content: space-between;
   border-top: 1px solid var(--border);
   color: var(--muted);
-  font-weight: 700;
   font-size: 14px;
+  font-weight: 700;
 }
 
 @media (max-width: 1050px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .matches-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .equipos-section {
+    padding: 30px 14px;
+  }
+
+  .team-grid,
+  .team-detail-card {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    min-height: 360px;
+  }
+
+  .team-detail-image img {
+    height: 320px;
+  }
+
+  .team-detail-content h1 {
+    font-size: 58px;
   }
 }
