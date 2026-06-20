@@ -1102,10 +1102,6 @@ a {
   transition: transform 0.25s ease;
 }
 
-.group-card:hover {
-  transform: translateY(-6px);
-}
-
 .group-card.disabled {
   opacity: 0.78;
 }
@@ -1182,7 +1178,7 @@ a {
   color: var(--green);
   border-top: 1px solid rgba(255, 255, 255, 0.16);
   font-size: 13px;
-  font-weight: 900;
+  font-weight: 600;
   text-transform: uppercase;
 }
 
@@ -1195,6 +1191,10 @@ a {
   background: var(--green);
   border-radius: 50%;
   font-size: 22px;
+
+  &:hover {
+    transform: translateY(2px);
+  }
 }
 /* ================= CLASIFICACIÓN PRO ================= */
 
