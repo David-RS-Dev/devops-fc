@@ -175,6 +175,7 @@ a {
 }
 
 .nav-link {
+  font-size: 13px;
   min-height: 40px;
   padding: 0 16px;
   display: inline-flex;
@@ -741,8 +742,9 @@ a {
   text-align: start;
   margin-top: -40px;
 }
+
 .home-section-title h2 {
-  font-size: 45px;
+  font-size: 65px;
 }
 
 .home-moments-grid {
@@ -1681,6 +1683,11 @@ a {
 
   .home-moments-header {
     justify-content: center;
+  }
+
+  .home-section-title {
+    text-align: center;
+    margin-top: -40px;
   }
 
   .home-section-title h2 {

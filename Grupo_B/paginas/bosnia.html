@@ -18,16 +18,29 @@
 
   <header class="topbar">
     <div class="topbar__inner">
-      <a class="brand" href="../../index.html">
+      <a class="brand" href="../../index.html?seccion=home">
         <i class="bx bx-football brand__icon"></i>
         <span>DevOps FC</span>
       </a>
 
+      <nav class="main-nav" id="mainNav">
+        <a class="nav-link" href="../../index.html?seccion=home">Inicio</a>
+        <a class="nav-link" href="../../index.html?seccion=momentos">Momentos</a>
+        <a class="nav-link" href="../../index.html?seccion=clasificacion">Clasificación</a>
+        <a class="nav-link" href="../../index.html?seccion=canchas">Canchas</a>
+        <a class="nav-link active" href="grupoB.html">Grupo B</a>
+        <a class="nav-link" href="../../integrantes.html">Desarrolladores</a>
+      </nav>
+
       <div class="topbar__actions">
         <a class="github-btn" href="grupoB.html">
           <i class="bx bx-left-arrow-alt"></i>
-          <span>Volver al Grupo B</span>
+          <span>Volver</span>
         </a>
+
+        <button class="menu-btn" onclick="alternarMenuSeleccion()">
+          <i class="bx bx-menu"></i>
+        </button>
       </div>
     </div>
   </header>
@@ -130,5 +143,7 @@
       </div>
     </section>
   </main>
+
+  <script src="../../index.js"></script>
 </body>
 </html>

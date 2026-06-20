@@ -617,3 +617,11 @@ function alternarMenuIntegrantes() {
     menu.classList.toggle("open");
   }
 }
+
+function alternarMenuSeleccion() {
+  let menu = document.getElementById("mainNav");
+
+  if (menu !== null) {
+    menu.classList.toggle("open");
+  }
+}
