@@ -1046,6 +1046,35 @@ a {
   font-size: 32px;
 }
 
+/* ================= Desarroladores================= */
+
+.member-avatar-img {
+  object-fit: cover;
+}
+
+.member-date {
+  width: max-content;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blue) !important;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.member-date i {
+  font-size: 16px;
+}
+
+.member-card:hover {
+  transform: translateY(-6px);
+}
+
 /* ======================================================
   GROUPS
 ====================================================== */

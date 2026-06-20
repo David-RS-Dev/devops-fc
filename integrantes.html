@@ -15,107 +15,125 @@
 <body>
   <header class="topbar">
     <div class="topbar__inner">
-      <button class="brand" onclick="window.location.href='index.html'">
+      <button class="brand" onclick="window.location.href='index.html?seccion=home'">
         <i class="bx bx-football brand__icon"></i>
         <span>DevOps FC</span>
       </button>
 
-      <button class="github-btn" onclick="window.location.href='index.html'">
-        <i class="bx bx-left-arrow-alt"></i>
-        <span>Volver</span>
-      </button>
+      <nav class="main-nav" id="mainNav">
+        <button class="nav-link" onclick="window.location.href='index.html?seccion=home'">Inicio</button>
+        <button class="nav-link" onclick="window.location.href='index.html?seccion=momentos'">Momentos</button>
+        <button class="nav-link" onclick="window.location.href='index.html?seccion=clasificacion'">Clasificación</button>
+        <button class="nav-link" onclick="window.location.href='index.html?seccion=canchas'">Canchas</button>
+        <button class="nav-link" onclick="window.location.href='index.html?seccion=grupos'">Grupos</button>
+        <button class="nav-link active">Desarrolladores</button>
+      </nav>
+
+      <div class="topbar__actions">
+        <button class="github-btn" onclick="window.open('https://github.com/David-RS-Dev/devops-fc', '_blank')">
+          <i class="bx bxl-github"></i>
+          <span>GitHub</span>
+        </button>
+
+        <button class="menu-btn" onclick="alternarMenuIntegrantes()">
+          <i class="bx bx-menu"></i>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
-      <section class="developers-section">
-        
-        <div class="section-heading small-heading">
-          <span class="eyebrow">Equipo</span>
-          <h2>Integrantes</h2>
-        </div>
+    <section class="developers-section">
+      <div class="section-heading">
+        <span class="eyebrow">Equipo</span>
+        <h2>Integrantes</h2>
+        <p>Estudiantes responsables del desarrollo del álbum virtual mundialista.</p>
+      </div>
 
-        <div class="members-grid">
-          <article class="member-card">
-            <div>
-              <div class="member-avatar">DR</div>
-              <h3>David Rivera</h3>
-              <p>David-RS-Dev</p>
-              <p>Líder del equipo</p>
-            </div>
-            <span>Grupo A</span>
-          </article>
+      <div class="members-grid">
+        <article class="member-card">
+          <div>
+            <div class="member-avatar">DR</div>
+            <h3>David Rivera</h3>
+            <p>David-RS-Dev</p>
+            <p>Líder del equipo</p>
+          </div>
+          <span>Grupo A</span>
+        </article>
 
-          <article class="member-card">
-            <div>
-              <img class="member-avatar" src="Grupo_B/img/perfil.png" alt="Cristian Stalin Peña">
-              <h3>Stalyn Peña</h3>
-              <p>Stalyin</p>
-              <p>Desarrollador</p>
-            </div>
-            <span>Grupo B</span>
-          </article>
+        <article class="member-card">
+          <div>
+            <img class="member-avatar member-avatar-img" src="Grupo_B/img/perfil.png" alt="Stalyn Peña">
+            <h3>Stalyn Peña</h3>
+            <p>Stalyin</p>
+            <p>Desarrollador</p>
+            <p class="member-date">
+              <i class="bx bx-calendar"></i>
+              2 de enero del 2003
+            </p>
+          </div>
+          <span>Grupo B</span>
+        </article>
 
-          <article class="member-card">
-            <div>
-              <img class="member-avatar" src="Grupo_C/img/jla.jpeg" alt="Jose Luis Araujo">
-              <h3>Jose Luis Araujo</h3>
-              <p>Sonicse2099</p>
-              <p>Desarrollador</p>
-            </div>
-            <span>Grupo C</span>
-          </article>
+        <article class="member-card">
+          <div>
+            <img class="member-avatar member-avatar-img" src="Grupo_C/img/jla.jpeg" alt="Jose Luis Araujo">
+            <h3>Jose Luis Araujo</h3>
+            <p>Sonicse2099</p>
+            <p>Desarrollador</p>
+          </div>
+          <span>Grupo C</span>
+        </article>
 
-          <article class="member-card">
-            <div>
-              <img class="member-avatar" src="Grupo_D/img/xavo.jpg" alt="Xavo Palacios">
-              <h3>Xavo Palacios</h3>
-              <p>xavopalacios</p>
-              <p>Desarrollador</p>
-            </div>
-            <span>Grupo D</span>
-          </article>
+        <article class="member-card">
+          <div>
+            <img class="member-avatar member-avatar-img" src="Grupo_D/img/xavo.jpg" alt="Xavo Palacios">
+            <h3>Xavo Palacios</h3>
+            <p>xavopalacios</p>
+            <p>Desarrollador</p>
+          </div>
+          <span>Grupo D</span>
+        </article>
 
-          <article class="member-card">
-            <div>
-              <div class="member-avatar">VP</div>
-              <h3>Víctor Pilachanga</h3>
-              <p>Victor-DREC</p>
-              <p>Desarrollador</p>
-            </div>
-            <span>Grupo E</span>
-          </article>
-        </div>
-        
-        <div class="section-heading">
-          <span class="eyebrow">GitHub workflow</span>
-          <h2>Organización del trabajo</h2>
-          <p>
-            El proyecto puede trabajar con ramas para mantener ordenado el desarrollo grupal.
-          </p>
-        </div>
+        <article class="member-card">
+          <div>
+            <div class="member-avatar">VP</div>
+            <h3>Víctor Pilachanga</h3>
+            <p>Victor-DREC</p>
+            <p>Desarrollador</p>
+          </div>
+          <span>Grupo E</span>
+        </article>
+      </div>
 
-        <div class="workflow-grid">
-          <article>
-            <i class='bx bx-git-branch'></i>
-            <h3>Trabajo en ramas</h3>
-            <p>Cada integrante trabaja su grupo en una rama propia para evitar choques.</p>
-          </article>
+      <div class="section-heading small-heading">
+        <span class="eyebrow">GitHub workflow</span>
+        <h2>Organización del trabajo</h2>
+        <p>El proyecto puede trabajar con ramas para mantener ordenado el desarrollo grupal.</p>
+      </div>
 
-          <article>
-            <i class='bx bx-home-alt-2'></i>
-            <h3>Rama main</h3>
-            <p>Contiene la versión estable del proyecto, lista para presentar o desplegar.</p>
-          </article>
+      <div class="workflow-grid">
+        <article>
+          <i class="bx bx-git-branch"></i>
+          <h3>Trabajo en ramas</h3>
+          <p>Cada integrante trabaja su grupo en una rama propia para evitar choques.</p>
+        </article>
 
-          <article>
-            <i class='bx bx-code-curly'></i>
-            <h3>Rama dev</h3>
-            <p>Recibe avances antes de unirlos a main y ayuda a probar cambios.</p>
-          </article>
-        </div>
+        <article>
+          <i class="bx bx-home-alt-2"></i>
+          <h3>Rama main</h3>
+          <p>Contiene la versión estable del proyecto, lista para presentar o desplegar.</p>
+        </article>
 
-      </section>
+        <article>
+          <i class="bx bx-code-curly"></i>
+          <h3>Rama dev</h3>
+          <p>Recibe avances antes de unirlos a main y ayuda a probar cambios.</p>
+        </article>
+      </div>
+    </section>
   </main>
+
+  <script src="index.js"></script>
 </body>
 </html>

@@ -59,22 +59,24 @@ function abrirRepositorio() {
   window.open("https://github.com/David-RS-Dev/devops-fc", "_blank");
 }
 
-window.addEventListener("DOMContentLoaded", function () {
-  const parametros = new URLSearchParams(window.location.search);
-  const seccion = parametros.get("seccion");
-  if (seccion === "grupos") {
-    mostrarSeccion("grupos");
-  }
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   let loader = document.getElementById("intro-loader");
 
-  if (loader !== null) {
-    setTimeout(function () {
-      loader.classList.add("intro-loader--hide");
-    }, 2000);
+  if (loader === null) return;
+
+  let navegacion = performance.getEntriesByType("navigation")[0];
+  let esRecarga = navegacion && navegacion.type === "reload";
+  let loaderVisto = sessionStorage.getItem("loaderVisto");
+
+  if (loaderVisto === "true" && !esRecarga) {
+    loader.style.display = "none";
+    return;
   }
+
+  setTimeout(function () {
+    loader.classList.add("intro-loader--hide");
+    sessionStorage.setItem("loaderVisto", "true");
+  }, 2000);
 });
 
 function moverMomentosHome(direccion) {
@@ -608,3 +610,10 @@ document.addEventListener("DOMContentLoaded", function () {
   pintarClasificacion();
   pintarEstadios();
 });
+
+function alternarMenuIntegrantes() {
+  const menu = document.getElementById("mainNav");
+  if (menu !== null) {
+    menu.classList.toggle("open");
+  }
+}
