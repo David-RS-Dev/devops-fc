@@ -313,10 +313,6 @@ a {
   line-height: 1.7;
 }
 
-.small-heading {
-  margin-top: 72px;
-}
-
 /* ======================================================
   HERO
 ====================================================== */
@@ -946,11 +942,20 @@ a {
 ====================================================== */
 
 .students-section,
-.groups-section,
-.developers-section {
+.groups-section {
   width: min(1500px, 94%);
   margin: 0 auto;
   padding: 40px 0;
+}
+
+.developers-section {
+  width: min(1500px, 94%);
+  margin: 0 auto;
+  padding: 25px 0;
+}
+
+.members-grid {
+  margin-bottom: 25px;
 }
 
 .students-grid,
@@ -975,7 +980,7 @@ a {
 .student-card,
 .member-card,
 .workflow-grid article {
-  min-height: 310px;
+  min-height: 250px;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -1122,6 +1127,45 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 12px;
   backdrop-filter: blur(10px);
+}
+
+.group-card {
+  position: relative;
+}
+
+.teams-list a,
+.teams-list li {
+  transition: 0.25s ease;
+}
+
+.teams-list a:hover,
+.teams-list li:hover {
+  transform: translateX(6px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.group-actions {
+  margin-top: 18px;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--green);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.group-actions i {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: var(--dark);
+  background: var(--green);
+  border-radius: 50%;
+  font-size: 22px;
 }
 /* ================= CLASIFICACIÓN PRO ================= */
 
