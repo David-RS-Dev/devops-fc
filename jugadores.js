@@ -109,6 +109,84 @@ cromosMundial.push(
     destacado: true,
     curiosidad: "Es el máximo goleador histórico de Bosnia y Herzegovina.",
   }),
+
+  crearCromoJugador({
+    id: 7,
+    nombre: "Lionel Messi",
+    pais: "Argentina",
+    posicion: "Delantero",
+    urlImagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSd_QxpNvq86pbBmJufKTVVtWFCLpQNSl2Veg8h-0djEA&s",
+    urlBandera: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1280px-Flag_of_Argentina.svg.png%22",
+    colorFondoHex: "#75AADB",
+    estadisticas: { goles: 106, partidos: 180 },
+    destacado: true,
+    curiosidad: "Es campeón del mundo con Argentina."
+  }),
+ 
+  crearCromoJugador({
+    id: 8,
+    nombre: "Julián Álvarez",
+    pais: "Argentina",
+    posicion: "Delantero",
+    urlImagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYjEm6kH0wmPlbZNWmSJv7HsrScmCDEEhMdmU8RzJPwQ&s=10",
+    urlBandera: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/1280px-Flag_of_Argentina.svg.png%22",
+    colorFondoHex: "#75AADB",
+    estadisticas: { goles: 10, partidos: 35 },
+    destacado: true,
+    curiosidad: "Fue parte importante del título mundial de Argentina en 2022."
+  }),
+ 
+  crearCromoJugador({
+    id: 9,
+    nombre: "Kylian Mbappé",
+    pais: "Francia",
+    posicion: "Delantero",
+    urlImagen: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTwT572e2-oIuN9fgl9kH6EBvBJFJMbhRwIQ7p6e6vtl8bAwCgR2xTCA8A-nZ-1AGX-EdOCaVxBmfSyR_ipVE0mE8kj3JtLU6GU0-_uY_JwnWoILUHkxLXxBP1ChxdkBH2UKJ_9VXUZwl1K&s=19",
+    urlBandera: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/1280px-Flag_of_France.svg.png%22",
+    colorFondoHex: "#1D428A",
+    estadisticas: { goles: 45, partidos: 75 },
+    destacado: true,
+    curiosidad: "Fue campeón del mundo con Francia en 2018."
+  }),
+ 
+  crearCromoJugador({
+    id: 10,
+    nombre: "Antoine Griezmann",
+    pais: "Francia",
+    posicion: "Mediocampista",
+    urlImagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTz5AcB_1PtSW839C_5PAbds74cAdDYFcgoZ4RavSHjQ&s=10",
+    urlBandera: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/1280px-Flag_of_France.svg.png%22",
+    colorFondoHex: "#1D428A",
+    estadisticas: { goles: 44, partidos: 130 },
+    destacado: true,
+    curiosidad: "Ha sido uno de los jugadores más constantes de Francia."
+  }),
+ 
+  crearCromoJugador({
+    id: 11,
+    nombre: "Hirving Lozano",
+    pais: "México",
+    posicion: "Extremo",
+    urlImagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDp0NWlZ4J_dA8mjOvBX2Cbk255hxdwnJIdOR0mIk2eQ&s=10",
+    urlBandera: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/1280px-Flag_of_Mexico.svg.png%22",
+    colorFondoHex: "#006847",
+    estadisticas: { goles: 18, partidos: 70 },
+    destacado: true,
+    curiosidad: "Marcó un gol histórico contra Alemania en el Mundial 2018."
+  }),
+ 
+  crearCromoJugador({
+    id: 12,
+    nombre: "Christian Eriksen",
+    pais: "Dinamarca",
+    posicion: "Mediocampista",
+    urlImagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1Secl4Mwx_cRvpNq7URz466UgbyCbtam57sD1sNxFZA&s",
+    urlBandera: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Flag_of_Denmark.svg/1280px-Flag_of_Denmark.svg.png%22",
+    colorFondoHex: "#C60C30",
+    estadisticas: { goles: 40, partidos: 130 },
+    destacado: true,
+    curiosidad: "Es uno de los líderes históricos de la selección danesa."
+  })
 );
 
 function crearCromoJugador(datosJugador) {
@@ -127,6 +205,18 @@ function crearCromoJugador(datosJugador) {
     destacado: datosJugador.destacado,
     curiosidad: datosJugador.curiosidad,
   };
+}
+
+function calcularTotalGolesGrupoCD() {
+  let total = 0;
+ 
+  cromosMundial.forEach(function (jugador) {
+    if (jugador.id >= 7 && jugador.id <= 12) {
+      total += jugador.estadisticas.goles;
+    }
+  });
+ 
+  return total;
 }
 
 function renderizarAlbum() {
@@ -159,6 +249,12 @@ function renderizarAlbum() {
   if (totalCromos) {
     totalCromos.textContent = cromosMundial.length;
   }
+}
+
+const totalGolesGrupoCD = document.getElementById("totalGolesGrupoCD");
+ 
+if (totalGolesGrupoCD) {
+  totalGolesGrupoCD.textContent = calcularTotalGolesGrupoCD();
 }
 
 document.addEventListener("DOMContentLoaded", function () {
