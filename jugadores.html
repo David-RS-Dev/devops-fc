@@ -5,25 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jugadores | DevOps FC</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="jugadores.css">
 </head>
 <body>
 
   <header class="topbar">
-    <div class="topbar__inner">
-      <a class="brand" href="index.html?seccion=home">
-        DevOps FC
-      </a>
+  <div class="topbar__inner">
+    <button class="brand" onclick="window.location.href='index.html?seccion=home'">
+      <i class="bx bx-football brand__icon"></i>
+      <span>DevOps FC</span>
+    </button>
 
-      <nav class="main-nav">
-        <a class="nav-link" href="index.html?seccion=home">Inicio</a>
-        <a class="nav-link" href="index.html?seccion=grupos">Grupos</a>
-        <a class="nav-link active" href="jugadores.html">Jugadores</a>
-        <a class="nav-link" href="integrantes.html">Desarrolladores</a>
-      </nav>
+    <nav class="main-nav" id="mainNav">
+      <button class="nav-link" onclick="window.location.href='index.html?seccion=home'">Inicio</button>
+      <button class="nav-link" onclick="window.location.href='index.html?seccion=momentos'">Momentos</button>
+      <button class="nav-link" onclick="window.location.href='index.html?seccion=clasificacion'">Clasificación</button>
+      <button class="nav-link" onclick="window.location.href='index.html?seccion=canchas'">Canchas</button>
+      <button class="nav-link" onclick="window.location.href='index.html?seccion=grupos'">Grupos</button>
+      <button class="nav-link active">Jugadores</button>
+      <button class="nav-link" onclick="window.location.href='integrantes.html'">Desarrolladores</button>
+    </nav>
+
+    <div class="topbar__actions">
+      <button class="github-btn" onclick="window.open('https://github.com/David-RS-Dev/devops-fc', '_blank')">
+        <i class="bx bxl-github"></i>
+        <span>GitHub</span>
+      </button>
     </div>
-  </header>
+  </div>
+</header>
 
   <main class="album-page">
     <section class="section-heading">
