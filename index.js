@@ -338,6 +338,15 @@ const gruposMundial = [
       ["sco", "Escocia", 2, 0, 0, 2, 0, 4, -4, 0],
     ],
   },
+  {
+    grupo: "Grupo E",
+    equipos: [
+      ["GER", "Alemania", 3, 2, 0, 1, 10, 4, 6, 6],
+      ["CIV", "Costa de Marfil", 3, 2, 0, 1, 4, 2, 2, 6],
+      ["ECU", "Ecuador", 3, 1, 1, 1, 2, 2, 0, 4],
+      ["CUW", "Curazao", 3, 0, 1, 2, 1, 9, -8, 1],
+    ],
+  },
 ];
 
 const estadiosMundial = [
